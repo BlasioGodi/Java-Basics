@@ -104,7 +104,7 @@ public class BigONotations {
 			return;
 		else {
 			int pivot = theArray[right];
-			int pivotLocation = PartionArray(left, right, pivot);
+			int pivotLocation = PartitionArray(left, right, pivot);
 			
 			QuickSort(left, pivotLocation - 1);
 			QuickSort(pivotLocation + 1, right);
@@ -130,14 +130,20 @@ public class BigONotations {
             }
             else
             {
-                swapValues(leftPointer, rightPointer);
+                var temp = leftPointer;
+                leftPointer = rightPointer;
+                rightPointer = temp;
 
             }
         }
-        swapValues(leftPointer, right);
+        
+        var temp = leftPointer;
+        leftPointer = right;
+        right = temp;
+        
         return leftPointer;
     }
-	
+
 	//Main program
 	public static void main(String[] args) {
 		
@@ -169,6 +175,21 @@ public class BigONotations {
 		algoTest3.BubbleSort();
 		algoTest4.BubbleSort();
 		algoTest5.BubbleSort();
+		
+		//BinarySearch algorithm
+		algoTest1.BinarySearch(20);
+		algoTest2.BinarySearch(20);
+		algoTest3.BinarySearch(20);
+		algoTest4.BinarySearch(20);
+		algoTest5.BinarySearch(20);
+		
+		//QuickSort algorithm
+		algoTest1.QuickSort(0,algoTest1.itemsInArray);
+		algoTest2.QuickSort(0,algoTest2.itemsInArray);
+		algoTest3.QuickSort(0,algoTest3.itemsInArray);
+		algoTest4.QuickSort(0,algoTest4.itemsInArray);
+		algoTest5.QuickSort(0,algoTest5.itemsInArray);
+
 	}
 
 }
